@@ -10,7 +10,7 @@ dns:
   use-hosts-for-dns: true
   # DNS服务器列表
   nameserver:
-    - 139.196.141.3
+    - 139.196.73.245
   # DNS缓存
   cache-size: 1024
   cache-expire: 600
