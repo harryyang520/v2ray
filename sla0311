@@ -1,0 +1,44 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+dns:
+  enable: true
+  # 使用节点DNS
+  use-hosts-for-dns: true
+  # DNS服务器列表
+  nameserver:
+    - 139.196.141.3
+  # DNS缓存
+  cache-size: 1024
+  cache-expire: 600
+proxies:
+  - {name: cl01, server: 13.231.184.209, port: 10171, type: vmess, uuid: fc30bd70-ebf1-492f-bedf-223a1719dbe6, alterId: 864, cipher: auto, tls: false}
+  - {name: cl02, server: 13.231.184.209, port: 10172, type: vmess, uuid: fc30bd70-ebf1-492f-bedf-223a1719dbe6, alterId: 864, cipher: auto, tls: false}
+  - {name: cl03, server: 13.231.184.209, port: 10173, type: vmess, uuid: fc30bd70-ebf1-492f-bedf-223a1719dbe6, alterId: 864, cipher: auto, tls: false}
+  - {name: cl04, server: 13.231.184.209, port: 10174, type: vmess, uuid: fc30bd70-ebf1-492f-bedf-223a1719dbe6, alterId: 864, cipher: auto, tls: false}
+  - {name: cl05, server: 13.231.184.209, port: 10175, type: vmess, uuid: fc30bd70-ebf1-492f-bedf-223a1719dbe6, alterId: 864, cipher: auto, tls: false}
+proxy-groups:
+  - name: 直连
+    type: select
+    proxies:
+      - DIRECT
+  - name: 漏网之鱼
+    type: select
+    proxies:
+      - cl01
+      - cl02
+      - cl03
+      - cl04
+      - cl05
+rules:
+# - SRC-IP-CIDR,192.168.3.51/32,frend
+# - SRC-IP-CIDR,192.168.3.50/32,h2o
+ - DOMAIN-SUFFIX,local,直连
+ - IP-CIDR,10.0.0.0/8,直连,no-resolve
+ - IP-CIDR,172.16.0.0/12,直连,no-resolve
+ - IP-CIDR,127.0.0.0/8,直连,no-resolve
+ - IP-CIDR,100.64.0.0/10,直连,no-resolve
+ - MATCH,漏网之鱼
