@@ -9,8 +9,8 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-cn2 = vmess, 1jp.vp-8b2sj03ai76org.xyz, 443, username=596DBD76-40FD-4348-9FDC-C905D161E7D0, tls=true, vmess-aead=false, ws=true, ws-path=/ab7890, sni=jp.vp-8b2sj03ai76or.xyz, ws-headers=Host:jp.vp-8b2sj03ai76or.xyz, skip-cert-verify=false, tfo=false
-dmit = vmess, 1dmit.vp-8b2sj03ai76org.xyz, 443, username=d8332ab3-9561-4cbb-a8ac-207dad2b22cc, tls=true, vmess-aead=false, ws=true, ws-path=/ab7866, sni=dmit.vp-8b2sj03ai76or.xyz, ws-headers=Host:dmit.vp-8b2sj03ai76or.xyz, skip-cert-verify=false, tfo=false
+cn2 = vmess, jp.vp-8b2sj03ai76or.xyz, 443, username=596DBD76-40FD-4348-9FDC-C905D161E7D0, tls=true, vmess-aead=false, ws=true, ws-path=/ab7890, sni=jp.vp-8b2sj03ai76or.xyz, ws-headers=Host:jp.vp-8b2sj03ai76or.xyz, skip-cert-verify=false, tfo=false
+dmit = vmess, dmit.vp-8b2sj03ai76or.xyz, 443, username=d8332ab3-9561-4cbb-a8ac-207dad2b22cc, tls=true, vmess-aead=false, ws=true, ws-path=/ab7866, sni=dmit.vp-8b2sj03ai76or.xyz, ws-headers=Host:dmit.vp-8b2sj03ai76or.xyz, skip-cert-verify=false, tfo=false
 🎯 全球直连 = direct
 
 [Proxy Group]
