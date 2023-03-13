@@ -3,7 +3,7 @@ loglevel = notify
 interface = 127.0.0.1
 skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local
 ipv6 = false
-dns-server = system, 223.5.5.5
+dns-server = system, 8.8.4.4
 exclude-simple-hostnames = true
 enhanced-mode-by-rule = true
 
@@ -14,10 +14,7 @@ dmit = vmess, 1dmit.vp-8b2sj03ai76org.xyz, 443, username=d8332ab3-9561-4cbb-a8ac
 🎯 全球直连 = direct
 
 [Proxy Group]
-🔰 节点选择 = select,♻️ 自动选择,🎯 全球直连,cn2,dmit
-🛑 全球拦截 = select,REJECT,DIRECT
-🐟 漏网之鱼 = select,🔰 节点选择,🎯 全球直连,♻️ 自动选择,cn2,dmit
-
+🔰 节点选择 = select,cn2,dmit
 [Rule]
 DOMAIN-SUFFIX,local,🎯 全球直连
 IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
@@ -25,5 +22,5 @@ IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
 IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
 IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
 IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve
-GEOIP,CN,🎯 全球直连
-FINAL,🐟 漏网之鱼
+GEOIP,CN,🔰 节点选择
+FINAL,🔰 节点选择
